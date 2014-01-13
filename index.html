@@ -15,8 +15,8 @@
 			<button ng-click="getRandomPlayer()">Get Player</button>
 			<span>{{currentPlayer.name}}</span>
 			<input type="text" ng-model="playerCost">
-			<button ng-click="addToTeamA(playerCost, 'teamA')">Team A</button>
-			<button ng-click="addToTeamB(playerCost, 'teamB')">Team B</button>
+			<button ng-click="addToTeam(playerCost, 'teamA')">Team A</button>
+			<button ng-click="addToTeam(playerCost, 'teamB')">Team B</button>
 		</div>
 		<div class="teamA" ng-repeat="player in players" ng-if="player.team == 'teamA'">
 			{{player.name}}&nbsp;{{player.cost}}

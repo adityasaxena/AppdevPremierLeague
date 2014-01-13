@@ -20,21 +20,23 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 		}
 	};
 
-	$scope.addToTeamA = function(playerCost , team){
+	$scope.addToTeam = function(playerCost , team){
 		if($scope.currentPlayer!=undefined){
-			$scope.currentPlayer.team = team;
-			$scope.currentPlayer.cost = playerCost;
-			$scope.currentPlayer.sold = true;
-		}
-		else{
-			alert("choose a player");
-		}
-	};
-	$scope.addToTeamB = function(playerCost , team){
-		if($scope.currentPlayer!=undefined){
-			$scope.currentPlayer.team = team;
-			$scope.currentPlayer.cost = playerCost
-			$scope.currentPlayer.sold = true;
+			if(playerCost!=null && playerCost!=''&& playerCost!=undefined){
+				if(playerCost <= 400){
+					$scope.currentPlayer.team = team;
+					$scope.currentPlayer.cost = playerCost;
+					$scope.currentPlayer.sold = true;
+				}
+				else if(playerCost == 10){
+					$scope.currentPlayer.team = team;
+					$scope.currentPlayer.cost = playerCost;
+					$scope.currentPlayer.sold = true;	
+				}
+			}
+			else{
+				alert("enter cost");
+			}
 		}
 		else{
 			alert("choose a player");
