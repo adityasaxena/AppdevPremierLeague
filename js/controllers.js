@@ -1,3 +1,3 @@
-apl.controller('AplController', ['$scope', function($scope){
-  console.log('init');
+apl.controller('AplController', ['$scope', 'data', 'playerService', function($scope, data, playerService){
+  $scope.players = data.listOfPlayers;
 }]);
