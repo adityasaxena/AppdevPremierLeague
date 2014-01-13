@@ -4,11 +4,18 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 	$scope.teamA;
 	$scope.teamB;
 	$scope.currentPlayer;
+	$scope.unsoldPlayers;
 
 	$scope.getRandomPlayer = function (){
-		var rand = parseInt(Math.random()*($scope.players.length-1));
-		$scope.currentPlayer = $scope.players[rand];
-		return $scope.players[rand];
+
+		for(var i=0 ; i < $scope.players.length ; i++){
+			if($scope.players[i].sold == false){
+				$scope.unsoldPlayers = $scope.players;
+			}
+		}
+		var rand = parseInt(Math.random()*($scope.unsoldPlayers.length-1));
+		$scope.currentPlayer = $scope.unsoldPlayers[rand];
+		return $scope.unsoldPlayers[rand];
 	};
 
 	$scope.addToTeamA = function(playerCost){

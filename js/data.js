@@ -231,7 +231,7 @@ apl.factory('data', function(){
       bowls: true,
       team: '',
       cost: 100,
-      sold: false,
+      sold: true,
       active: true
     }
   ];
