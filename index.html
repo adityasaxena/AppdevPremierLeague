@@ -2,29 +2,76 @@
 <html>
 <head>
 	<title>AppDev Premier League</title>
-</head>
-<body ng-app="apl">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 
-	<div ng-controller="AplController">
-		<div class="pool">
-			<div ng-repeat="player in unsoldPlayers|filter:{sold:false}">
-				{{player.name}}
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<style>
+     .container{
+     	width:100% !important;
+     	padding:0px;
+     }
+     .list-group-item{
+     	/*padding:2px 15px !important;*/
+     	width:200px;
+     	
+     	float:left;
+     }
+     .list-group-item:nth-child(even){
+     	float:right;
+       
+     }
+     input[type=text]{
+     	width:300px;
+     }
+	</style>
+</head>
+<body ng-app="apl" class="container">
+
+	<div ng-controller="AplController" >
+		<div class="well  col-md-4">
+			<div class="panel panel-primary">
+			  <!-- Default panel contents -->
+			  <div class="panel-heading">Players Pools</div>
+			   <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item" ng-repeat="player in unsoldPlayers|filter:{sold:false}">{{player.name}}</li>
+			  </ul>
 			</div>
 		</div>
-		<div class="control">
-			<button ng-click="getRandomPlayer()">Get Player</button>
-			<span>{{currentPlayer.name}}</span>
-			<input type="text" ng-model="playerCost">
-			<button ng-click="addToTeam(playerCost, 'teamA')">Team A</button>
-			<button ng-click="addToTeam(playerCost, 'teamB')">Team B</button>
+		<div class="well col-md-4">
+		<div class="control " >
+			<button class="btn btn-primary btn-lg" ng-click="getRandomPlayer()">Get Player</button>
+			<p><h2> Player Name :<span>{{currentPlayer.name}}</span></h2></p>
+			<h2> Cost : <input type="text" ng-model="playerCost" ></h2>
+			<button class="btn btn-primary btn-lg" ng-click="addToTeam(playerCost, 'teamA')">Team A</button>
+			<button class="btn btn-primary btn-lg" ng-click="addToTeam(playerCost, 'teamB')">Team B</button>
 		</div>
-		<div class="teamA" ng-repeat="player in players" ng-if="player.team == 'teamA'">
-			{{player.name}}&nbsp;{{player.cost}}
+	</div>
+	<div class="well col-md-4">
+		<div class="panel panel-primary teamA">
+			  <!-- Default panel contents -->
+			  <div class="panel-heading">Team A</div>
+			   <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item" ng-repeat="player in players" ng-if="player.team == 'teamA'">{{player.name}}&nbsp;{{player.cost}}</li>
+			  </ul>
 		</div>
-		<div class="teamB" ng-repeat="player in players" ng-if="player.team == 'teamB'">
-			{{player.name}}&nbsp;{{player.cost}}
+	</div>
+	<div class="well col-md-4">
+		<div class="panel panel-primary teamA">
+			  <!-- Default panel contents -->
+			  <div class="panel-heading">Team A</div>
+			   <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item" ng-repeat="player in players" ng-if="player.team == 'teamB'">{{player.name}}&nbsp;{{player.cost}}</li>
+			  </ul>
 		</div>
-
+</div>
 	</div>
 
 	<script src="js/lib/angular.js"></script>
