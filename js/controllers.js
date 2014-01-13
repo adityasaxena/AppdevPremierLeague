@@ -47,21 +47,23 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 			if(playerCost!=null && playerCost!=''&& playerCost!=undefined){
 				if(playerCost%50 == 0 && playerCost >=100){
 					if(playerCost <= 400){
-						if($scope.pointsLeftTeamA)
 						$scope.currentPlayer.team = team;
 						$scope.currentPlayer.cost = playerCost;
 						$scope.currentPlayer.sold = true;
 						teamPoint();
 					}
+					else{
+						alert("Points Should be less than 400");
+					}
 					$scope.getRandomPlayer();
 					$scope.playerCost="";
 				}
 				else{
-					alert("Cost should be more than 100 and multiple of 50");
+					alert("Points should be more than 100 and multiple of 50");
 				}
 			}
 			else{
-				alert("enter cost");
+				alert("enter Points");
 			}
 		}
 		else{
