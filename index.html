@@ -7,7 +7,7 @@
 
 	<div ng-controller="AplController">
 		<div class="pool">
-			<div ng-repeat="player in unsoldPlayers">
+			<div ng-repeat="player in unsoldPlayers|filter:{sold:false}">
 				{{player.name}}
 			</div>
 		</div>

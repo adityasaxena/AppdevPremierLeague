@@ -4,13 +4,14 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 	$scope.teamA;
 	$scope.teamB;
 	$scope.currentPlayer;
-	$scope.unsoldPlayers;
+	$scope.unsoldPlayers = [];
 
+    $scope.unsoldPlayers=$scope.players;
 	$scope.getRandomPlayer = function (){
-
+       
 		for(var i=0 ; i < $scope.players.length ; i++){
 			if($scope.players[i].sold == false){
-				$scope.unsoldPlayers = $scope.players;
+				$scope.unsoldPlayers[i] = $scope.players[i];
 			}
 		}
 		var rand = parseInt(Math.random()*($scope.unsoldPlayers.length-1));
