@@ -7,12 +7,29 @@
 
     <div ng-controller="AplController">
 
+        <div class="pool">
+            <div ng-repeat="player in players">
+                {{player.name}}&nbsp;{{player.cost}} 
+            </div>
+        </div>
+        <div class="control">
+        	<button ng-click="getRandomPlayer()">Get Player</button>
+        	<span>{{currentPlayer}}</span>
+
+        </div>
+        <div class="teamA">
+
+        </div>
+        <div class="teamB">
+
+        </div>
     </div>
 
     <script src="js/lib/angular.js"></script>
 
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/playerService.js"></script>
     <script src="js/data.js"></script>
 
 </body>
