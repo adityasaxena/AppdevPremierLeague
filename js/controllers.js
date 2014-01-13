@@ -7,24 +7,20 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 
 	$scope.getRandomPlayer = function (){
 		var rand = parseInt(Math.random()*($scope.players.length-1));
-		$scope.currentPlayer = $scope.players[rand];
-		return $scope.players[rand];
+        if(!$scope.players[rand].sold){
+            $scope.currentPlayer = $scope.players[rand];
+            return $scope.currentPlayer;
+        }
+        else{
+            return $scope.getRandomPlayer();
+        }
+
 	};
 
-	$scope.addToTeamA = function(playerCost){
+	$scope.addToTeam = function(playerCost, teamName){
 		if($scope.currentPlayer!=undefined){
-			$scope.currentPlayer.team = "teamA";
+			$scope.currentPlayer.team = teamName;
 			$scope.currentPlayer.cost = playerCost;
-			$scope.currentPlayer.sold = true;
-		}
-		else{
-			alert("choose a player");
-		}
-	};
-	$scope.addToTeamB = function(playerCost){
-		if($scope.currentPlayer!=undefined){
-			$scope.currentPlayer.team = "teamB";
-			$scope.currentPlayer.cost = playerCost
 			$scope.currentPlayer.sold = true;
 		}
 		else{
