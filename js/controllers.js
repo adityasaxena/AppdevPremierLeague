@@ -8,7 +8,6 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 
     $scope.unsoldPlayers=$scope.players;
 	$scope.getRandomPlayer = function (){
-<<<<<<< HEAD
        
 		for(var i=0 ; i < $scope.players.length ; i++){
 			if($scope.players[i].sold == false){
@@ -18,23 +17,22 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 		var rand = parseInt(Math.random()*($scope.unsoldPlayers.length-1));
 		$scope.currentPlayer = $scope.unsoldPlayers[rand];
 		return $scope.unsoldPlayers[rand];
-=======
-		var rand = parseInt(Math.random()*($scope.players.length-1));
-        if(!$scope.players[rand].sold){
-            $scope.currentPlayer = $scope.players[rand];
-            return $scope.currentPlayer;
-        }
-        else{
-            return $scope.getRandomPlayer();
-        }
-
->>>>>>> aade350bab9b11ad05a793fd0cbfe5f918ef8275
 	};
 
-	$scope.addToTeam = function(playerCost, teamName){
+	$scope.addToTeamA = function(playerCost){
 		if($scope.currentPlayer!=undefined){
-			$scope.currentPlayer.team = teamName;
+			$scope.currentPlayer.team = "teamA";
 			$scope.currentPlayer.cost = playerCost;
+			$scope.currentPlayer.sold = true;
+		}
+		else{
+			alert("choose a player");
+		}
+	};
+	$scope.addToTeamB = function(playerCost){
+		if($scope.currentPlayer!=undefined){
+			$scope.currentPlayer.team = "teamB";
+			$scope.currentPlayer.cost = playerCost
 			$scope.currentPlayer.sold = true;
 		}
 		else{
