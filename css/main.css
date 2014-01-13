@@ -1,0 +1,27 @@
+.container{
+     	width:100% !important;
+     	padding:0px;
+}
+.list-group-item{
+	padding:5px 10px !important;
+	min-width:150px;
+	width:48%;
+	float:left;
+}
+.list-group-item:nth-child(even){
+	float:right;
+  
+}
+input[type=text]{
+	width:300px;
+}
+.well{
+     display:inline-block !important;
+      min-width:100%;
+}
+.btn100{
+     width:99%;
+}
+.btn50{
+     width:49%;
+}

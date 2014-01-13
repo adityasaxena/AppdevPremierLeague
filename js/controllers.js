@@ -33,6 +33,8 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 					$scope.currentPlayer.cost = playerCost;
 					$scope.currentPlayer.sold = true;	
 				}
+				$scope.getRandomPlayer();
+				$scope.playerCost="";
 			}
 			else{
 				alert("enter cost");
