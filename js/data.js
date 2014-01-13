@@ -224,6 +224,15 @@ apl.factory('data', function(){
       cost:100,
       sold: false,
       active: true
+    },
+    {
+      name: 'Sundeep Gupta',
+      bats: true,
+      bowls: true,
+      team: '',
+      cost: 100,
+      sold: false,
+      active: true
     }
   ];
 
