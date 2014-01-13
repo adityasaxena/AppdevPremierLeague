@@ -1,4 +1,5 @@
 
+
 apl.controller('AplController', ['$scope', 'data', 'playerService', function($scope, data, playerService){
   $scope.players = data.listOfPlayers;
 
@@ -12,5 +13,6 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 		$scope.currentPlayer = $scope.players[rand].name;
 		return $scope.players[rand];
 	}
+
 
 }]);

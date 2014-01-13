@@ -6,15 +6,19 @@
 <body ng-app="apl">
 
     <div ng-controller="AplController">
-
         <div class="pool">
             <div ng-repeat="player in players">
-                {{player.name}}&nbsp;{{player.cost}} 
+                {{player.name}}&nbsp;{{player.cost}}
             </div>
         </div>
         <div class="control">
+
+
+
+
         	<button ng-click="getRandomPlayer()">Get Player</button>
         	<span>{{currentPlayer}}</span>
+
 
         </div>
         <div class="teamA">
