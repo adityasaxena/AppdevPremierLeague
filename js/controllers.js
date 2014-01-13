@@ -1,5 +1,3 @@
-
-
 apl.controller('AplController', ['$scope', 'data', 'playerService', function($scope, data, playerService){
 	$scope.players = data.listOfPlayers;
 
@@ -16,8 +14,8 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 	$scope.addToTeamA = function(playerCost){
 		if($scope.currentPlayer!=undefined){
 			$scope.currentPlayer.team = "teamA";
-			$scope.currentPlayer.cost = playerCost
-			console.log($scope.currentPlayer.cost);
+			$scope.currentPlayer.cost = playerCost;
+			$scope.currentPlayer.sold = true;
 		}
 		else{
 			alert("choose a player");
@@ -27,29 +25,10 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 		if($scope.currentPlayer!=undefined){
 			$scope.currentPlayer.team = "teamB";
 			$scope.currentPlayer.cost = playerCost
-			console.log($scope.currentPlayer.team);
+			$scope.currentPlayer.sold = true;
 		}
 		else{
 			alert("choose a player");
-		}
-	};
-
-	$scope.showTeamA = function(){
-		console.log("show team A");
-		for (var i = 0 ; i <= $scope.players.length; i++) {
-			if($scope.players[i].team == "teamA")
-			{
-				console.log($scope.players[i].name);
-			}
-		}
-	};
-	$scope.showTeamB = function(){
-		console.log("show team B");
-		for (var i = 0 ; i <= $scope.players.length; i++) {
-			if($scope.players[i].team == "teamB")
-			{
-				console.log($scope.players[i].name);
-			}
 		}
 	};
 }]);

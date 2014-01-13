@@ -8,7 +8,7 @@
 	<div ng-controller="AplController">
 		<div class="pool">
 			<div ng-repeat="player in players">
-				{{player.name}}&nbsp;{{player.cost}}
+				{{player.name}}
 			</div>
 		</div>
 		<div class="control">
@@ -18,12 +18,13 @@
 			<button ng-click="addToTeamA(playerCost)">Team A</button>
 			<button ng-click="addToTeamB(playerCost)">Team B</button>
 		</div>
-		<div class="teamA">
-
+		<div class="teamA" ng-repeat="player in players" ng-if="player.team == 'teamA'">
+			{{player.name}}&nbsp;{{player.cost}}
 		</div>
-		<div class="teamB">
-
+		<div class="teamB" ng-repeat="player in players" ng-if="player.team == 'teamB'">
+			{{player.name}}&nbsp;{{player.cost}}
 		</div>
+
 	</div>
 
 	<script src="js/lib/angular.js"></script>
