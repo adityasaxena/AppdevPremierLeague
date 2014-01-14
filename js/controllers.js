@@ -21,8 +21,8 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 			if($scope.players[i].team == "teamB"){
 				teamBPoints = teamBPoints + parseInt($scope.players[i].cost);
 			}
-			$scope.pointsLeftTeamA = 1500 - teamAPoints;
-			$scope.pointsLeftTeamB = 1500 - teamBPoints;
+			$scope.pointsLeftTeamA = 2500 - teamAPoints;
+			$scope.pointsLeftTeamB = 2500 - teamBPoints;
 		}
 		teamAPoints = 0;
 		teamBPoints = 0;
