@@ -4,13 +4,17 @@
 }
 .list-group-item{
 	padding:5px 10px !important;
-	min-width:150px;
-	width:48%;
-	float:left;
+	
 }
-.list-group-item:nth-child(even){
+/*.list-group-item:nth-child(even){
 	float:right;
 	
+}*/
+.list1:nth-child(n+13){
+	display:none;
+}
+.list2:nth-child(-n+13){
+	display:none;
 }
 input[type=text]{
 	width:300px;
