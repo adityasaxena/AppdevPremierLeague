@@ -10,10 +10,10 @@
 	float:right;
 	
 }*/
-.list1:nth-child(n+13){
+.list1:nth-child(even){
 	display:none;
 }
-.list2:nth-child(-n+13){
+.list2:nth-child(odd){
 	display:none;
 }
 input[type=text]{
@@ -22,6 +22,15 @@ input[type=text]{
 .well{
 	display:inline-block !important;
 	min-width:100%;
+	padding:5px !important;
+	margin-bottom:0px !important;
+}
+.panel{
+	margin-bottom:10px !important;
+}
+hr{
+	margin-bottom:5px !important;
+	margin-top:5px !important;
 }
 .btn100{
 	width:99%;
