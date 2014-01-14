@@ -56,4 +56,9 @@
 	.playerImage{
 		width: 140px;
 		height: 140px;
+		margin-top: 11px;
+	}
+	.arrange{
+		height: 168px;
+		padding: 20px;
 	}
