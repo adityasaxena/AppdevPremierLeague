@@ -22,7 +22,7 @@
 						<div class="panel-heading">Players Pools</div>
 						<!-- List group -->
 						<ul class="list-group">
-							<li class="list-group-item list1" ng-repeat="player in unsoldPlayers|filter:{sold:false}"  >	{{player.name}}
+							<li class="list-group-item list1" ng-repeat="player in unsoldPlayers|filter:{sold:false}"  ng-animate="'animate'" >	{{player.name}}
 							</li>
 						</ul>
 					</div>
@@ -32,21 +32,61 @@
 				<div class="well">
 					<div class="control">
 						<button class="btn btn-success btn-lg btn100" ng-click="getRandomPlayer()">Get Player</button>
-						<div claqss="row">
+						<br/>
+						<div class="row" style="margin-top:10px">
 							<div class="col-md-3">
 								<img src="images/sachin.jpg" alt="..." class="img-circle playerImage">
 							</div>
-							<div class="col-md-4"><p>
+							<div class="col-md-9">
+								<!-- <p>
 								<h2> Player Name :
 									<span>{{currentPlayer.name}}</span>
 								</h2>
 							</p>
-							<h2> Cost : <input type="text" ng-model="playerCost" ></h2>
+							<h2> Cost : <input type="text" ng-model="playerCost" ></h2> -->
+							<table class="table table-bordered table-striped">
+								<tr>
+									<th>Player Name:</th>
+									<td>{{currentPlayer.name}}</td>
+								</tr>
+								<tr>
+									<th>Description:</th>
+									<td>N/A</td>
+								</tr>
+								<tr>
+									<th>Cost : </th>
+									<td> <input type="text" ng-model="playerCost" ></td>
+								</tr>
+							</table>
 						</div>
 					</div>
-
+					<div class="row">
+						  <div class="col-md-5">
+						    <div class="input-group">
+						      <span class="input-group-btn">
+						        <button class="btn btn-success" type="button">Team A</button>
+						      </span>
+						      <input type="text" class="form-control">
+						    </div><!-- /input-group -->
+						  </div><!-- /.col-lg-6 -->
+						   <div class="col-md-2">
+						    <button class="btn btn-primary btn100" ng-click="getRandomPlayer()">
+						    	<span class="glyphicon glyphicon-refresh"></span>
+						    </button>
+						  </div>
+						  <div class="col-md-5">
+						    <div class="input-group">
+						      <input type="number" min="100" max="400" step="50" class="form-control">
+						      <span class="input-group-btn">
+						        <button class="btn btn-success" type="button"> Team B</button>
+						      </span>
+						    </div><!-- /input-group -->
+						  </div><!-- /.col-lg-6 -->
+					</div>
+				    <div class="row">
 					<button class="btn btn-success btn-lg btn50" ng-click="addToTeam(playerCost, 'teamA')">Team A</button>
 					<button class="btn btn-success btn-lg btn50" ng-click="addToTeam(playerCost, 'teamB')">Team B</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -57,7 +97,7 @@
 					<div class="panel-heading">Players Pools</div>
 					<!-- List group -->
 					<ul class="list-group">
-						<li class="list-group-item list2" ng-repeat="player in unsoldPlayers|filter:{sold:false}"  >	{{player.name}}
+						<li class="list-group-item list2" ng-repeat="player in unsoldPlayers|filter:{sold:false}" ng-animate="'animate'" >	{{player.name}}
 						</li>
 					</ul>
 				</div>
