@@ -5,16 +5,73 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 	$scope.teamB;
 	$scope.currentPlayer;
 	$scope.unsoldPlayers = [];
-	$scope.pointsLeftTeamA = 0;
-	$scope.pointsLeftTeamB = 0;
+	$scope.pointsLeftTeamA = 2500;
+	$scope.pointsLeftTeamB = 2500;
+	
+	var counterA=1;var counterB=1;
 	var teamAPoints = 0;
 	var teamBPoints = 0;
 	$scope.unsoldPlayers=$scope.players;
 
-
+	
+	function getcount(playerCost,team){
+	
+	if(team=="teamA")
+	{
+	valafterthisbidA=$scope.pointsLeftTeamA-playerCost;
+	console.log("afterbid "+valafterthisbidA);
+	for(var j=0; j < $scope.players.length; j++){
+	
+	if($scope.players[j].team=="teamA"){
+	counterA++;
+	alert(counterA+" players in A");
+	break;
+	}
+	
+	}
+	console.log("left points in A "+$scope.pointsLeftTeamA);
+	if((valafterthisbidA<((11-counterA)*100))&&(counterA<12)){
+	
+	console.log("counterA "+counterA);
+	alert("cant do");
+	counterA--;
+	return false;
+	}else{
+	return true;
+	alert("possible");
+	}}//end of team A
+	else
+	{
+	valafterthisbidB=$scope.pointsLeftTeamB-playerCost;
+	console.log("afterbid "+valafterthisbidB);
+	for(var j=0; j < $scope.players.length; j++){
+	
+	if($scope.players[j].team=="teamB"){
+	counterB++;
+	alert(counterB+" players in B");
+	break;
+	}
+	
+	}
+	console.log("left points in B "+$scope.pointsLeftTeamB);
+	if((valafterthisbidB<((11-counterB)*100))&&(counterB<12)){
+	
+	console.log("counterB "+counterB);
+	alert("cant do");
+	counterB--;
+	return false;
+	}else{
+	alert("possible");
+	return true;
+	
+	
+	}//end of team B
+	}
+	}
 	function teamPoint(){
-
+	console.log("inside team");
 		for(var i=0; i < $scope.players.length; i++){
+		
 			if($scope.players[i].team == "teamA"){
 				teamAPoints = teamAPoints + parseInt($scope.players[i].cost);		
 			}
@@ -43,6 +100,7 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 	};
 
 	$scope.addToTeam = function(playerCost , team){
+		if(getcount(playerCost,team)){
 		if($scope.currentPlayer!=undefined){
 			if(playerCost!=null && playerCost!=''&& playerCost!=undefined){
 				if(playerCost%50 == 0 && playerCost >=100){
@@ -50,9 +108,11 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 						$scope.currentPlayer.team = team;
 						$scope.currentPlayer.cost = playerCost;
 						$scope.currentPlayer.sold = true;
+						
 						teamPoint();
+						
 					}
-					else{
+						else{
 						alert("Points Should be less than 400");
 					}
 					$scope.getRandomPlayer();
@@ -66,8 +126,11 @@ apl.controller('AplController', ['$scope', 'data', 'playerService', function($sc
 				alert("enter Points");
 			}
 		}
+		
 		else{
 			alert("choose a player");
 		}
+		}// for getcount function
+		
 	};
 }]);
