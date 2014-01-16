@@ -44,17 +44,17 @@ apl.factory('data', function(){
       description: 'Primarily a Batsman, can bowl few spin, medium pace overs as well.',
       image: 'image/sachin.jpg'
     },
-    {
-      name: 'Aditya Saxena',
-      bats: true,
-      bowls: true,
-      team: '',
-      cost:100,
-      sold: false,
-      active: true,
-      description: 'Played at college level.',
-      image: 'image/sachin.jpg'
-    },
+    // {
+    //   name: 'Aditya Saxena',
+    //   bats: true,
+    //   bowls: true,
+    //   team: '',
+    //   cost:100,
+    //   sold: false,
+    //   active: true,
+    //   description: 'Played at college level.',
+    //   image: 'image/sachin.jpg'
+    // },
     {
       name: 'Akshay Gupta',
       bats: true,
@@ -198,17 +198,17 @@ apl.factory('data', function(){
       description: 'NA',
       image: 'image/sachin.jpg'
     },
-    {
-      name: 'Mahesh Saini',
-      bats: true,
-      bowls: true,
-      team: '',
-      cost:100,
-      sold: false,
-      active: true,
-      description: 'NA',
-      image: 'image/sachin.jpg'
-    },
+    // {
+    //   name: 'Mahesh Saini',
+    //   bats: true,
+    //   bowls: true,
+    //   team: '',
+    //   cost:100,
+    //   sold: false,
+    //   active: true,
+    //   description: 'NA',
+    //   image: 'image/sachin.jpg'
+    // },
     {
       name: 'Neeraj Gupta',
       bats: true,
