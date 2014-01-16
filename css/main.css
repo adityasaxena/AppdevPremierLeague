@@ -44,9 +44,8 @@
 		border-style: solid;
 	}
 	.points-heading
-	{
-	background-image: url('/images/team-logo.jpg');	
-	font-size:5em;	
+	{	
+	font-size:3em;	
 	font-color:;	
 	}
 	.points-left
