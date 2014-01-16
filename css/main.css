@@ -4,7 +4,7 @@
 	src: url('../fonts/Animal Silence.otf');
 }
 .fanimal{
-	font-family: animalsilence !important;
+	/*font-family: animalsilence;*/
 }
 .container{
 	width:100% !important;

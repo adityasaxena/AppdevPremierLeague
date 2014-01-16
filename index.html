@@ -29,7 +29,7 @@
 						<div class="panel-heading">Players Pools</div>
 						<!-- List group -->
 						<ul class="list-group">
-							<li class="list-group-item list1" ng-repeat="player in unsoldPlayers|filter:{sold:false}"  ng-animate="'animate'" >	{{player.name}}
+							<li class="list-group-item list1" ng-repeat="player in players|filter:{sold:false}"  ng-animate="'animate'" >	{{player.name}}
 							</li>
 						</ul>
 					</div>
@@ -85,27 +85,29 @@
 					</div>
 					<br><br>
 					<div class="row">
-						  <div class="col-md-5">
-						    <div class="input-group">
-						      <span class="input-group-btn">
-						        <button class="btn btn-success" type="button" ng-click="addToTeam(teamAPlayerCost, 'teamA')">Striker</button>
-						      </span>
-						      <!--<input type="text" class="form-control">-->
-							  <input type="number" min="100" max="400" step="50" class="form-control" ng-model="teamAPlayerCost">
-						    </div><!-- /input-group -->
-						  </div><!-- /.col-lg-6 -->
 						   <div class="col-md-2">
 						    <button class="btn btn-primary btn100" ng-click="getRandomPlayer()">
 						    	<span class="glyphicon glyphicon-refresh"></span>
 						    </button>
 						  </div>
 						  
-						  <div class="col-md-5">
+						  <div class="col-md-10">
 						    <div class="input-group">
-						      <input type="number" min="100" max="400" step="50" class="form-control" ng-model="teamBPlayerCost">
-						      <span class="input-group-btn">
-						        <button class="btn btn-success" type="button" ng-click="addToTeam(teamBPlayerCost, 'teamB')">Hotspot</button>
-						      </span>
+                                <span class="input-group-btn">
+						            <button class="btn btn-success" type="button" ng-click="addToTeam(playerCost, 'teamA')">Striker</button>
+						        </span>
+                                <select class="form-control" ng-model="playerCost">
+                                    <option>100</option>
+                                    <option>150</option>
+                                    <option>200</option>
+                                    <option>250</option>
+                                    <option>300</option>
+                                    <option>350</option>
+                                    <option>400</option>
+                                </select>
+						        <span class="input-group-btn">
+                                    <button class="btn btn-success" type="button" ng-click="addToTeam(playerCost, 'teamB')">Hotspot</button>
+                                </span>
 						    </div><!-- /input-group -->
 						  </div><!-- /.col-lg-6 -->
 					</div>
@@ -119,11 +121,11 @@
 				<div class="points-box">	
 					
 					<div class="points-heading"><img src="images/strikers-final.png"  width="100px" height="100px"/>			Strikers</div>
-					<div class="points-left">{{pointsLeftTeamA}}</div>
+					<div class="points-left">{{maxPoints - teamA.currentCost}}</div>
 				</div>
 				<div class="points-box">
 					<div class="points-heading"><img src="images/hotspot-final.png"  width="100px" height="100px"/>			Hotshot</div>
-					<div class="points-left">{{pointsLeftTeamB}}</div>
+					<div class="points-left">{{maxPoints - teamB.currentCost}}</div>
 				</div>
 			</div>
 		</div>
@@ -134,7 +136,7 @@
 					<div class="panel-heading">Players Pools</div>
 					<!-- List group -->
 					<ul class="list-group">
-						<li class="list-group-item list2" ng-repeat="player in unsoldPlayers|filter:{sold:false}" ng-animate="'animate'" >	{{player.name}}
+						<li class="list-group-item list2" ng-repeat="player in players|filter:{sold:false}" ng-animate="'animate'" >	{{player.name}}
 						</li>
 					</ul>
 				</div>
@@ -166,7 +168,7 @@
 					</div>
 				
 					<ul class="list-group">
-						<li class="list-group-item" ng-repeat="player in players | orderBy:'cost':true" ng-if="player.team == 'teamA'">{{player.name}}<span class="badge">{{player.cost}}</span></li>
+						<li class="list-group-item" ng-repeat="player in players" ng-if="player.team == 'teamA'">{{player.name}}<span class="badge">{{player.cost}}</span></li>
 					</ul>
 				</div>
 			</div>
@@ -193,7 +195,7 @@
 						</div>
 						
 						<ul class="list-group">
-							<li class="list-group-item" ng-repeat="player in players| orderBy:'cost':true" ng-if="player.team == 'teamB'">{{player.name}}<span class="badge">{{player.cost}}</span></li>
+							<li class="list-group-item" ng-repeat="player in players" ng-if="player.team == 'teamB'">{{player.name}}<span class="badge">{{player.cost}}</span></li>
 						</ul>
 					</div>
 				</div>
