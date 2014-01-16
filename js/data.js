@@ -64,7 +64,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'You know me well. Super fitness with exceptional fielding and bowling. Dare to have a face off :)',
-      image: 'image/sachin.jpg'
+      image: 'images/team/akshaygupta.jpg'
     },
     {
       name: 'Akshaya Kumar Sharma',
@@ -75,7 +75,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'Left Arm Fast Bowler',
-      image: 'image/sachin.jpg'
+      image: 'images/team/sachin.jpg'
     },
     {
       name: 'Aman Singal',
@@ -86,7 +86,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'NA',
-      image: 'image/sachin.jpg'
+      image: 'images/team/aman.jpg'
     },
      {
       name: 'Anuj Dua',
@@ -130,7 +130,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'NA',
-      image: 'image/sachin.jpg'
+      image: 'images/team/Awanish.jpg'
     },
     {
       name: 'Biju',
@@ -185,7 +185,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'I Bat defensively and very slowly for hours. I bowl even slower but get batsmen caught out on the boundary(sometimes). I field ok and do not let go of any catches and I do not misfield!',
-      image: 'image/sachin.jpg'
+      image: 'images/team/jyoti.jpg'
     },
     {
       name: 'Karan Arora',
