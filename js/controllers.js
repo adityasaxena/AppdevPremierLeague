@@ -1,6 +1,8 @@
 apl.controller('AplController', ['$scope', 'data', 'playerService',
 	function($scope, data, playerService) {
 
+        var flag = true;
+
 		$scope.players = data.getListOfPlayers();
         data.saveListOfPlayers($scope.players);
 		$scope.maxPoints = 2500;
@@ -42,7 +44,13 @@ apl.controller('AplController', ['$scope', 'data', 'playerService',
           if((10 - $scope[team].playersBought) < 0 && ($scope.maxPoints - parseInt($scope[team].currentCost,10) - parseInt(playerCost, 10) >= 0)){
             return true;
           }
-          return ((($scope.maxPoints - $scope[team].currentCost - playerCost)/(11 - ($scope[team].playersBought + 1))) > 100);
+
+          if($scope.maxPoints - parseInt($scope.teamA.currentCost,10) < 100 && $scope.maxPoints - parseInt($scope.teamB.currentCost,10) < 100){
+            flag = false;
+            return true;
+          }
+
+          return ((($scope.maxPoints - parseInt($scope[team].currentCost,10) - parseInt(playerCost,10))/(11 - (parseInt($scope[team].playersBought) + 1))) > 100);
         }
 
 		$scope.getRandomPlayer = function() {
@@ -73,7 +81,12 @@ apl.controller('AplController', ['$scope', 'data', 'playerService',
             if(buyingAllowed(playerCost, team)){
               $scope.players[$scope.randomIndex].team = team;
               $scope.players[$scope.randomIndex].sold = true;
-              $scope.players[$scope.randomIndex].cost = playerCost;
+              if(!flag){
+                $scope.players[$scope.randomIndex].cost = 0;
+              }
+              else{
+                $scope.players[$scope.randomIndex].cost = playerCost;
+              }
               data.saveListOfPlayers($scope.players);
               $scope.players = data.getListOfPlayers();
               $scope.currentPlayer = '';
