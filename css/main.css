@@ -38,6 +38,23 @@
 	.btn50{
 		width:49%;
 	}
+	.points-box
+	{
+		border-width:2px;
+		border-style: solid;
+	}
+	.points-heading
+	{
+	background-image: url('/images/team-logo.jpg');	
+	font-size:5em;	
+	font-color:;	
+	}
+	.points-left
+	{
+		font-size:5em;
+		float:right;
+		margin-top:-100px;
+	}
 	.badge {
 		display: inline-block;
 		min-width: 10px;
