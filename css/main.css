@@ -104,3 +104,25 @@ display:inline-block;
 width:450px;
 height:110px;
 }
+.ribbon{
+	background-image:url('../images/ribbon.jpg');
+	background-position: -10px;
+	background-repeat: none;
+}
+.navbar{
+	min-height:75px !important;
+	border:none !important;
+}
+.logoHeader{
+	width: 40%;
+margin: 0 auto;
+font-size: 28px;
+line-height: 77px;
+color: white;
+padding-left: 85px;
+font-weight: bold;
+}
+.navbar{
+	margin-left: -35px !important;
+	margin-bottom: 5px !important;
+}
