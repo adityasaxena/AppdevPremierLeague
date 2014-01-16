@@ -283,7 +283,7 @@ apl.factory('data', function(){
       cost:100,
       sold: false,
       active: true,
-      description: 'I am passionate about cricket. I am a bowler played very well at different university , college level , having a gold and silver medal in it. Played with several clubs and also a part of TCS corporate team',
+      description: 'I am passionate about cricket. I am a bowler but appdev players treat me as batsman , now I am all rounder',
       image: 'images/team/prayag.png'
     },
     {
