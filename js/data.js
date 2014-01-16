@@ -75,7 +75,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'Left Arm Fast Bowler',
-      image: 'images/team/sachin.jpg'
+      image: 'images/team/akshaya.jpg'
     },
     {
       name: 'Aman Singal',
@@ -108,7 +108,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'Love to Open.',
-      image: 'images/team/sachin.jpg'
+      image: 'images/team/arpit.jpg'
     },
     {
       name: 'Ashish Manchanda',
@@ -141,7 +141,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'Can hit sixes as much as the team wants. Get opposition teams top order batsmen out at will!',
-      image: 'images/team/sachin.jpg'
+      image: 'images/team/biju.jpg'
     },
     {
       name: 'Gagan Sahni',
@@ -196,7 +196,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'NA',
-      image: 'images/team/sachin.jpg'
+      image: 'images/team/siddharth.jpg'
     },
     // {
     //   name: 'Mahesh Saini',
@@ -251,7 +251,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'NA',
-      image: 'imagess/team/team/pankajarora.jpg'
+      image: 'images/team/team/pankajarora.jpg'
     },
     {
       name: 'Pinakpani Das',
@@ -328,7 +328,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'Bowler',
-      image: 'images/team/sanjeev mishra.jpg'
+      image: 'images/team/sanjeevmishra.jpg'
     },
     {
       name: 'Shadab Ahmed',
@@ -350,7 +350,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'A batsman who can bowl and a bolwer who can bat.',
-      image: 'images/team/sachin.jpg'
+      image: 'images/team/siddharth.jpg'
     },
     {
       name: 'Sourabh Gupta',
