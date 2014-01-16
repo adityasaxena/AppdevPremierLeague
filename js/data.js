@@ -46,7 +46,7 @@ apl.factory('data', function(){
       active: true
     },
     {
-      name: 'Aman Singhal',
+      name: 'Aman Singal',
       bats: true,
       bowls: true,
       team: '',
@@ -236,7 +236,16 @@ apl.factory('data', function(){
     }
   ];
 
+  function saveListOfPlayers(players){
+    localStorage.setItem('players', JSON.stringify(players));
+  }
+
+  function getListOfPlayers(){
+    return JSON.parse(localStorage.getItem('players')) || listOfPlayers;
+  }
+
   return {
-    listOfPlayers: listOfPlayers
+    getListOfPlayers: getListOfPlayers,
+    saveListOfPlayers : saveListOfPlayers
   }
 });
