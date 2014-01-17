@@ -11,8 +11,9 @@
 	padding:0px;
 }
 .list-group-item{
-	padding:5px 10px !important;
-    font-size:16px;
+	padding: 5px 10px !important;
+	font-size: 20px;
+	letter-spacing: 4px;
 	
 }
 /*.list-group-item:nth-child(even){
@@ -50,9 +51,9 @@
 	.points-box
 	{
 		border-radius: 10px;
-		background-color: #9E0808;
+		/*background-color: #9E0808;*/
 		box-shadow: 0px 0px 15px #991414;
-		color: white;
+		color: #9E0808;
 		margin-top: 5px;
 		padding: 10px;
 		border: 2px solid #222;
@@ -66,7 +67,7 @@
 	{
 		font-size:5em;
 		float:right;
-		margin-top:-100px;
+		margin-top:-125px;
 	}
 	.badge {
 		display: inline-block;
@@ -175,4 +176,6 @@ body{
 }
 .panel-primary>.panel-heading{
     background-image:linear-gradient(to bottom,#DD2433 0,#610D0D 100%) !important;
+    font-weight:bold;
+    font-size:20px;
 }
