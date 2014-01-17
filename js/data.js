@@ -34,6 +34,17 @@ apl.factory('data', function(){
       image: 'images/team/sachin.jpg'
     },
     {
+      name: 'Abihshek Nalwaya',
+      bats: true,
+      bowls: true,
+      team: '',
+      cost:100,
+      sold: false,
+      active: true,
+      description: 'I have dropped all the catches that ever came to me. Planning to write a book on How To Catch',
+      image: 'images/team/abhisheknalwaya.png'
+    },
+    {
       name: 'Aditya Pal',
       bats: true,
       bowls: true,
