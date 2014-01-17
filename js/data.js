@@ -96,7 +96,7 @@ apl.factory('data', function(){
       cost:100,
       sold: false,
       active: true,
-      description: 'NA',
+      description: 'Can Catch the ball with eyes closed apart from brilliant batting and bowling',
       image: 'images/team/aman.jpg'
     },
      {
@@ -140,7 +140,7 @@ apl.factory('data', function(){
       cost:100,
       sold: false,
       active: true,
-      description: 'NA',
+      description: 'I love to play cricket',
       image: 'images/team/Awanish.jpg'
     },
     {
@@ -382,7 +382,7 @@ apl.factory('data', function(){
       cost:100,
       sold: false,
       active: true,
-      description: 'NA',
+      description: 'A solid WicketKeeper',
       image: 'images/team/sumitjolly.jpg'
     },
     {
