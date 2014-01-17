@@ -40,9 +40,11 @@ apl.controller('AplController', ['$scope', 'data', 'playerService',
 
         function buyingAllowed(playerCost, team){
           if((10 - $scope[team].playersBought) == 0 && playerCost >= 100 && (parseInt($scope[team].currentCost, 10) + parseInt(playerCost, 10) <=2500)){
+            flag = true;
             return true;
           }
           if((10 - $scope[team].playersBought) < 0 && ($scope.maxPoints - parseInt($scope[team].currentCost,10) - parseInt(playerCost, 10) >= 0)){
+            flag = true;
             return true;
           }
 
@@ -51,6 +53,7 @@ apl.controller('AplController', ['$scope', 'data', 'playerService',
             return true;
           }
 
+          flag = true;
           return ((($scope.maxPoints - parseInt($scope[team].currentCost,10) - parseInt(playerCost,10))/(11 - (parseInt($scope[team].playersBought) + 1))) > 100);
         }
 
