@@ -262,7 +262,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'NA',
-      image: 'images/team/team/pankajarora.jpg'
+      image: 'images/team/pankajarora.jpg'
     },
     {
       name: 'Pinakpani Das',
