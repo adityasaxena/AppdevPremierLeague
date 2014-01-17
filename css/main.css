@@ -12,6 +12,7 @@
 }
 .list-group-item{
 	padding:5px 10px !important;
+    font-size:18px;
 	
 }
 /*.list-group-item:nth-child(even){

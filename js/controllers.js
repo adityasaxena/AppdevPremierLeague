@@ -18,7 +18,7 @@ apl.controller('AplController', ['$scope', 'data', 'playerService',
             $scope.teamA.playersBought = (getTeamInfo('teamA')).players;
             $scope.teamA.currentCost = (getTeamInfo('teamA')).cost;
 
-            $scope.teamB.name = 'Hotshot';
+            $scope.teamB.name = 'Hotshots';
             $scope.teamB.playersBought = ((getTeamInfo('teamB')).players);
             $scope.teamB.currentCost = (getTeamInfo('teamB')).cost;
         }
