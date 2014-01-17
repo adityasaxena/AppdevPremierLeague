@@ -107,5 +107,12 @@ apl.controller('AplController', ['$scope', 'data', 'playerService',
               alert("This team cannot buy the player for this amount. Reduce the amount and re-try");
             }
 		};
+
+        $scope.removePlayer = function(player){
+          player.sold = false;
+          player.cost = 100;
+          player.team = '';
+          data.saveListOfPlayers($scope.players);
+        }
 	}
 ]);

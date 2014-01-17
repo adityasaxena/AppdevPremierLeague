@@ -43,7 +43,7 @@
 						</div>
 						<!-- List group -->
 						<ul class="list-group">
-							<li class="list-group-item" ng-repeat="player in players | orderBy:'cost':true" ng-if="player.team == 'teamA'">{{player.name}}<span class="badge">{{player.cost}}</span></li>
+							<li class="list-group-item" ng-click="removePlayer(player)" ng-repeat="player in players | orderBy:'cost':true" ng-if="player.team == 'teamA'">{{player.name}}<span class="badge">{{player.cost}}</span></li>
 						</ul>
 					</div>
 				</div>
@@ -129,13 +129,13 @@
             <div class="well team">
 					<div class="panel panel-primary teamA">
 						<!-- Default panel contents -->
-						<div class="panel-heading">Hotshots&nbsp;-&nbsp;{{teamA.playersBought}}&nbsp;Players Bought
+						<div class="panel-heading">Hotshots&nbsp;-&nbsp;{{teamB.playersBought}}&nbsp;Players Bought
 						<!--	<span class="badge">2/11</span>
 							<span class="badge ">Points Remaining : {{pointsLeftTeamB}}/2500</span>-->
 						</div>
 						<!-- List group -->
 						<ul class="list-group">
-							<li class="list-group-item" ng-repeat="player in players| orderBy:'cost':true" ng-if="player.team == 'teamB'">{{player.name}}<span class="badge">{{player.cost}}</span></li>
+							<li class="list-group-item" ng-click="removePlayer(player)" ng-repeat="player in players| orderBy:'cost':true" ng-if="player.team == 'teamB'">{{player.name}}<span class="badge">{{player.cost}}</span></li>
 						</ul>
 					</div>
 				</div>
