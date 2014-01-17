@@ -118,7 +118,7 @@ apl.factory('data', function(){
       cost:100,
       sold: false,
       active: true,
-      description: 'With win win attitude I ensure I fight too win till the last ball is bowled be it batting, bowling or fielding, My contribution will always be more than 100%.',
+      description: 'With win win attitude I ensure I fight to win till the last ball is bowled be it batting, bowling or fielding, My contribution will always be more than 100%.',
       image: 'images/team/manchanda.jpg'
     },
     {
