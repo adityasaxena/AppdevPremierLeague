@@ -196,7 +196,7 @@ apl.factory('data', function(){
       sold: false,
       active: true,
       description: 'NA',
-      image: 'images/team/siddharth.jpg'
+      image: 'images/team/karanarora.jpg'
     },
     // {
     //   name: 'Mahesh Saini',
