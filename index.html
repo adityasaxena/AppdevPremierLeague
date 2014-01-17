@@ -55,14 +55,14 @@
 						<!--<button class="btn btn-success btn-lg btn100" ng-click="getRandomPlayer()">Get Player</button>-->
 						<div class="row" style="margin-top:10px">
 							<div class="col-md-3">
-								<img src="{{currentPlayer.image}}" alt="..." class="img-circle playerImage">
+								<img src="{{currentPlayer.image || 'images/team/sachin.jpg'}}" alt="..." class="img-circle playerImage">
 							</div>
 							<div class="col-md-9">
                                 <div>
                                     <h1>
-                                        {{currentPlayer.name}}
+                                        {{currentPlayer.name || 'Get Ready for the Next Player'}}
                                     </h1>
-                                    <blockquote>{{currentPlayer.description}}</blockquote>
+                                    <blockquote ng-if="currentPlayer.description">{{currentPlayer.description}}</blockquote>
                                 </div>
 						    </div>
 					</div>
