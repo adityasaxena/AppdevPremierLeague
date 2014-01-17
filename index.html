@@ -10,7 +10,7 @@
 
 		<!-- Latest compiled and minified JavaScript -->
 		<!-- <script src="js/lib/bootstrap.min.js"></script> -->
-		
+	    <script type="text/javascript" src="js/lib/underscore-min.js"></script>
 		
 	</head>
 	<body ng-app="apl" class="container" ng-controller="AplController">
@@ -37,7 +37,7 @@
 				<div class="well team">
 					<div class="panel panel-primary teamA">
 						<!-- Default panel contents -->
-						<div class="panel-heading">Striker
+						<div class="panel-heading">Strikers
 						<!--	<span class="badge">2/11</span>
 							<span class="badge ">Points Remaining : {{pointsLeftTeamA}}/2500</span>-->
 						</div>
@@ -53,50 +53,35 @@
 				<div class="well">
 					<div class="control">
 						<!--<button class="btn btn-success btn-lg btn100" ng-click="getRandomPlayer()">Get Player</button>-->
-						<br/>
 						<div class="row" style="margin-top:10px">
 							<div class="col-md-3">
 								<img src="{{currentPlayer.image}}" alt="..." class="img-circle playerImage">
 							</div>
 							<div class="col-md-9">
-								<!-- <p>
-								<h2> Player Name :
-									<span>{{currentPlayer.name}}</span>
-								</h2>
-							</p>
-							<h2> Cost : <input type="text" ng-model="playerCost" ></h2> -->
-							
-							<br><br><table class="table table-bordered table-striped">
-							
-								<tr>
-									<th>Player Name:</th>
-									<td>{{currentPlayer.name}}</td>
-								</tr>
-								<tr>
-									<th>Description:</th>
-									<td>{{currentPlayer.description}}</td>
-								</tr>
-								<!--<tr>
-									<th>Cost : </th>
-									<td> <input type="text" ng-model="playerCost" ></td>
-								</tr>-->
-							</table>
-						</div>
+                                <div>
+                                    <h1>
+                                        {{currentPlayer.name}}
+                                    </h1>
+                                    <blockquote>{{currentPlayer.description}}</blockquote>
+                                </div>
+						    </div>
 					</div>
 					<br><br>
 					<div class="row">
 						   <div class="col-md-2">
-						    <button class="btn btn-primary btn100" ng-click="getRandomPlayer()">
+						    <button class="btn btn-lg btn-primary btn100" ng-click="getRandomPlayer()">
 						    	<span class="glyphicon glyphicon-refresh"></span>
 						    </button>
 						  </div>
-						  
-						  <div class="col-md-10">
+						  <div class="col-md-3">
+
+						  </div>
+						  <div class="col-md-7">
 						    <div class="input-group">
                                 <span class="input-group-btn">
-						            <button class="btn btn-success" type="button" ng-click="addToTeam(playerCost, 'teamA')">Striker</button>
+						            <button class="btn btn-lg btn-success" type="button" ng-click="addToTeam(playerCost, 'teamA')">Strikers</button>
 						        </span>
-                                <select class="form-control" ng-model="playerCost">
+                                <select class="form-control input-lg" ng-model="playerCost">
                                     <option>100</option>
                                     <option>150</option>
                                     <option>200</option>
@@ -106,7 +91,7 @@
                                     <option>400</option>
                                 </select>
 						        <span class="input-group-btn">
-                                    <button class="btn btn-success" type="button" ng-click="addToTeam(playerCost, 'teamB')">Hotshots</button>
+                                    <button class="btn btn-lg btn-success" type="button" ng-click="addToTeam(playerCost, 'teamB')">Hotshots</button>
                                 </span>
 						    </div><!-- /input-group -->
 						  </div><!-- /.col-lg-6 -->
@@ -144,7 +129,7 @@
             <div class="well team">
 					<div class="panel panel-primary teamA">
 						<!-- Default panel contents -->
-						<div class="panel-heading">Hotspots 
+						<div class="panel-heading">Hotshots
 						<!--	<span class="badge">2/11</span>
 							<span class="badge ">Points Remaining : {{pointsLeftTeamB}}/2500</span>-->
 						</div>

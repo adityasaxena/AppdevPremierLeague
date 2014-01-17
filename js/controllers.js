@@ -6,6 +6,7 @@ apl.controller('AplController', ['$scope', 'data', 'playerService',
 		$scope.players = data.getListOfPlayers();
         data.saveListOfPlayers($scope.players);
 		$scope.maxPoints = 2500;
+        $scope.randomIndices = JSON.parse(localStorage.getItem('indices')) || [];
 
         $scope.teamA = {};
         $scope.teamB = {};
@@ -54,9 +55,18 @@ apl.controller('AplController', ['$scope', 'data', 'playerService',
         }
 
 		$scope.getRandomPlayer = function() {
-			$scope.randomIndex = parseInt(Math.random() * ($scope.players.length - 1), 10);
-			if ($scope.players[$scope.randomIndex].sold == false) {
+			$scope.randomIndex = Math.floor(Math.random() * ($scope.players.length));
+            if(_.contains($scope.randomIndices, $scope.randomIndex) && $scope.randomIndices.length < (_.filter($scope.players, function(player){return player.sold == false})).length){
+              $scope.getRandomPlayer();
+            }
+            else if(_.contains($scope.randomIndices, $scope.randomIndex) && $scope.randomIndices.length == (_.filter($scope.players, function(player){return player.sold == false})).length){
+              $scope.randomIndices = [];
+              localStorage.setItem('indices', JSON.stringify($scope.randomIndices));
+            }
+			else if ($scope.players[$scope.randomIndex].sold == false) {
 				$scope.currentPlayer = $scope.players[$scope.randomIndex];
+                $scope.randomIndices.push($scope.randomIndex);
+                localStorage.setItem('indices', JSON.stringify($scope.randomIndices));
 			} else {
 				$scope.getRandomPlayer();
 			}
@@ -89,6 +99,8 @@ apl.controller('AplController', ['$scope', 'data', 'playerService',
               }
               data.saveListOfPlayers($scope.players);
               $scope.players = data.getListOfPlayers();
+              $scope.randomIndices = _.without($scope.randomIndices, $scope.randomIndex);
+              localStorage.setItem('indices', JSON.stringify($scope.randomIndices));
               $scope.currentPlayer = '';
             }
             else{

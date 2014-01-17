@@ -380,7 +380,7 @@ apl.factory('data', function(){
       bowls: true,
       team: '',
       cost: 100,
-      sold: true,
+      sold: false,
       active: true,
       description: 'NA',
       image: 'images/team/sachin.jpg'
@@ -391,7 +391,7 @@ apl.factory('data', function(){
       bowls: true,
       team: '',
       cost: 100,
-      sold: true,
+      sold: false,
       active: true,
       description: 'Although I have last played cricket long ago, I had been the best bowler of my colony Team and very good batsman as well. I have mostly played with Tennis ball(Flash and Mark ball) and sometimes with leather',
       image: 'images/team/sachin.jpg'
