@@ -34,7 +34,7 @@ apl.factory('data', function(){
       image: 'images/team/sachin.jpg'
     },
     {
-      name: 'Abihshek Nalwaya',
+      name: 'Abhishek Nalwaya',
       bats: true,
       bowls: true,
       team: '',
