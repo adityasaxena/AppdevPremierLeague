@@ -54,7 +54,12 @@ apl.controller('AplController', ['$scope', 'data', 'playerService',
           }
 
           flag = true;
-          return ((($scope.maxPoints - parseInt($scope[team].currentCost,10) - parseInt(playerCost,10))/(11 - (parseInt($scope[team].playersBought) + 1))) > 100);
+          if((($scope.maxPoints - parseInt($scope[team].currentCost,10) - parseInt(playerCost,10))/(11 - (parseInt($scope[team].playersBought) + 1))) > 100){
+            if(($scope.maxPoints - parseInt($scope[team].currentCost,10) - parseInt(playerCost,10)) < 0 && (11 - (parseInt($scope[team].playersBought) + 1)) < 0){
+              return false;
+            }
+            return true;
+          }
         }
 
 		$scope.getRandomPlayer = function() {
